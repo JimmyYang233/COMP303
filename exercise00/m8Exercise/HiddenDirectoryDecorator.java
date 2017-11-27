@@ -5,7 +5,7 @@ import java.util.Iterator;
 public class HiddenDirectoryDecorator extends AbstractFile
 {
 	private Directory aDirectory;
-	protected HiddenDirectoryDecorator(String pName)
+	public HiddenDirectoryDecorator(String pName)
 	{
 		super(pName);
 		aDirectory=new Directory(pName);
