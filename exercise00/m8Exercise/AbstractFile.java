@@ -1,4 +1,4 @@
-package m8Exercises;
+package m8Exercise;
 
 public abstract class AbstractFile implements lFile{
 	String aName;

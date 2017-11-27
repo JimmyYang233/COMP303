@@ -1,4 +1,4 @@
-package m8Exercises;
+package m8Exercise;
 
 public class PrintVisitor implements UnitVisitor{
 
@@ -18,9 +18,20 @@ public class PrintVisitor implements UnitVisitor{
 
 	@Override
 	public void visitSymLink(SymLink pSymLink) {
+		System.out.println(pSymLink.getName());
 		for(lFile plFile: pSymLink){
 			plFile.accept(this);
 		}
+	}
+
+	@Override
+	public void visitHiddenDirectory(HiddenDirectoryDecorator pHiddenDirectory)
+	{
+		System.out.println(pHiddenDirectory.getName());
+		for(lFile plFile : pHiddenDirectory) {
+			plFile.accept(this);
+		}
+		
 	}
 	
 }

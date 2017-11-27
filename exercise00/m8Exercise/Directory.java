@@ -1,11 +1,11 @@
-package m8Exercises;
+package m8Exercise;
 
 import java.util.ArrayList;
 import java.util.Iterator;
 
 public class Directory extends AbstractFile{
 	
-	private ArrayList<lFile> alFiles=new ArrayList<lFile>(); 
+	private ArrayList<lFile> alFiles=new ArrayList<lFile>();
 	
 	public Directory(String pName) {
 		super(pName);
@@ -18,7 +18,8 @@ public class Directory extends AbstractFile{
 	@Override
 	public Iterator<lFile> iterator()
 	{
-		return alFiles.iterator();
+		ArrayList<lFile> tmp= new ArrayList<>(alFiles);
+		return tmp.iterator();
 	}
 
 	@Override
@@ -26,5 +27,18 @@ public class Directory extends AbstractFile{
 		pVisitor.visitDirectory(this);
 		
 	}
-	
+
+	@Override
+	public void remove(lFile pName)
+	{
+		alFiles.remove(pName);
+//		for(lFile plFile : alFiles)
+//		{
+//			if (plFile.getName().equals(pName))
+//			{
+//				alFiles.remove(plFile);
+//			}
+//		}
+	}
+
 }

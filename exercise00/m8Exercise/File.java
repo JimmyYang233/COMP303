@@ -1,4 +1,4 @@
-package m8Exercises;
+package m8Exercise;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -20,5 +20,11 @@ public class File extends AbstractFile{
 		pVisitor.visitFile(this);
 		
 	}
+
+	@Override
+	public void remove(lFile pName)
+	{
+	}
+
 	
 }

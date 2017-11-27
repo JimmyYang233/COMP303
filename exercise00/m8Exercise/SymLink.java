@@ -1,4 +1,4 @@
-package m8Exercises;
+package m8Exercise;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -17,7 +17,8 @@ public class SymLink extends AbstractFile{
 
 	@Override
 	public Iterator<lFile> iterator() {
-		return alFiles.iterator();
+		ArrayList<lFile> tmp= new ArrayList<>(alFiles);
+		return tmp.iterator();
 	}
 
 	@Override
@@ -25,4 +26,17 @@ public class SymLink extends AbstractFile{
 		pVisitor.visitSymLink(this);
 	}
 	
+	@Override
+	public void remove(lFile pName)
+	{
+		alFiles.remove(pName);
+//		for(lFile plFile : alFiles)
+//		{
+//			if (plFile.getName().equals(pName))
+//			{
+//				alFiles.remove(plFile);
+//			}
+//		}
+	}
+
 }
